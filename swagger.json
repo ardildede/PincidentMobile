@@ -1,0 +1,2794 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "title": "My API",
+      "version": "1.0"
+    },
+    "servers": [
+      {
+        "url": "https://demo-project-6-env.eba-bub3hufq.eu-north-1.elasticbeanstalk.com"
+      },
+      {
+        "url": "http://localhost:8080"
+      }
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "paths": {
+      "/user/update-user": {
+        "post": {
+          "tags": [
+            "user-controller"
+          ],
+          "operationId": "updateUser",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserUpdateRequestForAdmin"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserSimpleDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/update-town": {
+        "post": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "updateTown",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateTownRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TownResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/update-region": {
+        "post": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "updateRegion",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateRegionRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RegionResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/update-city": {
+        "post": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "updateCity",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateCityRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CityResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/get-regions-by-city-name": {
+        "post": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "getRegionsByCityName",
+          "parameters": [
+            {
+              "name": "cityName",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/RegionResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/add-town": {
+        "post": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "addTown",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TownRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TownResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/add-region": {
+        "post": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "addRegion",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RegionResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/add-city": {
+        "post": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "addCity",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityNameRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CityResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department/update": {
+        "post": {
+          "tags": [
+            "department-controller"
+          ],
+          "operationId": "updateDepartment",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentUpdateRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Department"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department/get-name": {
+        "post": {
+          "tags": [
+            "department-controller"
+          ],
+          "operationId": "getDepartmentByName",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentNameRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Department"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department/get-id": {
+        "post": {
+          "tags": [
+            "department-controller"
+          ],
+          "operationId": "getDepartmentById",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Department"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department/add": {
+        "post": {
+          "tags": [
+            "department-controller"
+          ],
+          "operationId": "addDepartment",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Department"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department-hierarchy/get-parents": {
+        "post": {
+          "tags": [
+            "department-hierarchy-controller"
+          ],
+          "operationId": "getParentDepartments",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/DepartmentHierarchy"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department-hierarchy/get-parents-only": {
+        "post": {
+          "tags": [
+            "department-hierarchy-controller"
+          ],
+          "operationId": "getParentDepartmentsOnly",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Department"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department-hierarchy/get-children": {
+        "post": {
+          "tags": [
+            "department-hierarchy-controller"
+          ],
+          "operationId": "getChildDepartments",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/DepartmentHierarchy"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department-hierarchy/get-children-only": {
+        "post": {
+          "tags": [
+            "department-hierarchy-controller"
+          ],
+          "operationId": "getChildDepartmentsOnly",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Department"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department-hierarchy/add": {
+        "post": {
+          "tags": [
+            "department-hierarchy-controller"
+          ],
+          "operationId": "addHierarchy",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentHierarchyRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DepartmentHierarchy"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company/update": {
+        "post": {
+          "tags": [
+            "company-controller"
+          ],
+          "operationId": "updateCompany",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyUpdateRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Company"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company/get-type-id": {
+        "post": {
+          "tags": [
+            "company-controller"
+          ],
+          "operationId": "getCompaniesByTypeId",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyTypeIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Company"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company/get-name": {
+        "post": {
+          "tags": [
+            "company-controller"
+          ],
+          "operationId": "getCompanyByName",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyNameRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Company"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company/get-id": {
+        "post": {
+          "tags": [
+            "company-controller"
+          ],
+          "operationId": "getCompanyById",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Company"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company/add": {
+        "post": {
+          "tags": [
+            "company-controller"
+          ],
+          "operationId": "addCompany",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Company"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company-type/update": {
+        "post": {
+          "tags": [
+            "company-type-controller"
+          ],
+          "operationId": "updateCompanyType",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyTypeUpdateRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompanyType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company-type/soft-delete": {
+        "post": {
+          "tags": [
+            "company-type-controller"
+          ],
+          "operationId": "softDeleteCompanyTypeById",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyTypeIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompanyType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company-type/get-by-name": {
+        "post": {
+          "tags": [
+            "company-type-controller"
+          ],
+          "operationId": "getCompanyTypeByName",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyTypeNameRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompanyType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company-type/get-by-id": {
+        "post": {
+          "tags": [
+            "company-type-controller"
+          ],
+          "operationId": "getCompanyTypeById",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyTypeIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompanyType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company-type/create": {
+        "post": {
+          "tags": [
+            "company-type-controller"
+          ],
+          "operationId": "createCompanyType",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCompanyTypeRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompanyType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/auth/reset-password": {
+        "post": {
+          "tags": [
+            "authentication-controller"
+          ],
+          "operationId": "resetPassword",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResetPasswordRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthenticationResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/auth/register": {
+        "post": {
+          "tags": [
+            "authentication-controller"
+          ],
+          "operationId": "register",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthenticationResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/auth/forgot-password": {
+        "post": {
+          "tags": [
+            "authentication-controller"
+          ],
+          "operationId": "forgotPassword",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForgotPasswordRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthenticationResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/auth/authenticate": {
+        "post": {
+          "tags": [
+            "authentication-controller"
+          ],
+          "operationId": "authenticate",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthenticationRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthenticationResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/auth/activation/resend": {
+        "post": {
+          "tags": [
+            "authentication-controller"
+          ],
+          "operationId": "resend",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResendRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthenticationResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/auth/activation/confirm": {
+        "post": {
+          "tags": [
+            "authentication-controller"
+          ],
+          "operationId": "confirm",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfirmRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthenticationResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/user/get-self": {
+        "get": {
+          "tags": [
+            "user-controller"
+          ],
+          "operationId": "getSelf",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/user/get-all-users": {
+        "get": {
+          "tags": [
+            "user-controller"
+          ],
+          "operationId": "getAllUsers",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserListResponseUserSimpleDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/user/get-all-users-detailed": {
+        "get": {
+          "tags": [
+            "user-controller"
+          ],
+          "operationId": "getAllUsersDetailed",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserListResponseUser"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/get-towns-by-region-id-city-id": {
+        "get": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "getTownsByRegionIdAndCityId",
+          "parameters": [
+            {
+              "name": "regionId",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "cityId",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/TownResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/get-regions-by-city-id": {
+        "get": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "getRegionsByCityId",
+          "parameters": [
+            {
+              "name": "cityId",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/RegionResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/get-city-by-name": {
+        "get": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "getCityByName",
+          "parameters": [
+            {
+              "name": "cityName",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CityResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/get-all-cities": {
+        "get": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "getAllCities",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/CityResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department/get-all": {
+        "get": {
+          "tags": [
+            "department-controller"
+          ],
+          "operationId": "getAllDepartments",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Department"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department-hierarchy/get-all": {
+        "get": {
+          "tags": [
+            "department-hierarchy-controller"
+          ],
+          "operationId": "getAllHierarchies",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/DepartmentHierarchy"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company/get-all": {
+        "get": {
+          "tags": [
+            "company-controller"
+          ],
+          "operationId": "getAllCompanies",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Company"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company-type/get-all": {
+        "get": {
+          "tags": [
+            "company-type-controller"
+          ],
+          "operationId": "getAllCompanyTypes",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/CompanyType"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/user/soft-delete-user": {
+        "delete": {
+          "tags": [
+            "user-controller"
+          ],
+          "operationId": "deleteUser",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/UserDeletedResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/soft-delete-town": {
+        "delete": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "deleteTown",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TownResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/soft-delete-region": {
+        "delete": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "deleteRegion",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RegionResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/town/soft-delete-city": {
+        "delete": {
+          "tags": [
+            "town-controller"
+          ],
+          "operationId": "deleteCity",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CityResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department/soft-delete": {
+        "delete": {
+          "tags": [
+            "department-controller"
+          ],
+          "operationId": "deleteDepartmentById",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Department"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/department-hierarchy/remove": {
+        "delete": {
+          "tags": [
+            "department-hierarchy-controller"
+          ],
+          "operationId": "removeHierarchy",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentHierarchyRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company/soft-delete": {
+        "delete": {
+          "tags": [
+            "company-controller"
+          ],
+          "operationId": "softDeleteCompanyById",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Company"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/company-type/delete": {
+        "delete": {
+          "tags": [
+            "company-type-controller"
+          ],
+          "operationId": "deleteCompanyTypeById",
+          "parameters": [
+            {
+              "name": "ngrok-skip-browser-warning",
+              "in": "header",
+              "description": "Bypass ngrok browser warning",
+              "required": false,
+              "example": "true"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyTypeIdRequest"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CompanyType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "UserUpdateRequestForAdmin": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "departmentId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "roleName": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            }
+          }
+        },
+        "Role": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "UserSimpleDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "surName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "role": {
+              "$ref": "#/components/schemas/Role"
+            },
+            "departmentId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "active": {
+              "type": "boolean"
+            }
+          }
+        },
+        "UpdateTownRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "regionId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "TownResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "UpdateRegionRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "cityId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "RegionResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "UpdateCityRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "CityResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "TownRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "regionId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "cityId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "RegionRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "cityId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CityNameRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "DepartmentUpdateRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "newName": {
+              "type": "string"
+            },
+            "newCompanyId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "newTypeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "newTownId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "newAddress": {
+              "type": "string"
+            }
+          }
+        },
+        "City": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "Company": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "shortName": {
+              "type": "string"
+            },
+            "type": {
+              "$ref": "#/components/schemas/CompanyType"
+            },
+            "town": {
+              "$ref": "#/components/schemas/Town"
+            },
+            "address": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "CompanyType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "Department": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "company": {
+              "$ref": "#/components/schemas/Company"
+            },
+            "type": {
+              "$ref": "#/components/schemas/DepartmentType"
+            },
+            "town": {
+              "$ref": "#/components/schemas/Town"
+            },
+            "address": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "DepartmentType": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "Region": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "city": {
+              "$ref": "#/components/schemas/City"
+            }
+          }
+        },
+        "Town": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "region": {
+              "$ref": "#/components/schemas/Region"
+            }
+          }
+        },
+        "DepartmentNameRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "DepartmentIdRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "DepartmentRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "companyId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "typeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "townId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "address": {
+              "type": "string"
+            }
+          }
+        },
+        "DepartmentHierarchy": {
+          "type": "object",
+          "properties": {
+            "parentDepartment": {
+              "$ref": "#/components/schemas/Department"
+            },
+            "childDepartment": {
+              "$ref": "#/components/schemas/Department"
+            }
+          }
+        },
+        "DepartmentHierarchyRequest": {
+          "type": "object",
+          "properties": {
+            "parentDepartmentId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "childDepartmentId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CompanyUpdateRequest": {
+          "type": "object",
+          "properties": {
+            "newName": {
+              "type": "string"
+            },
+            "newAddress": {
+              "type": "string"
+            },
+            "newShortName": {
+              "type": "string"
+            },
+            "newTownId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "newTypeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CompanyTypeIdRequest": {
+          "type": "object",
+          "properties": {
+            "typeId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CompanyNameRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "CompanyIdRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CompanyRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "shortName": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "typeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "townId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CompanyTypeUpdateRequest": {
+          "type": "object",
+          "properties": {
+            "newName": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "CompanyTypeNameRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "CreateCompanyTypeRequest": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "ResetPasswordRequest": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "confirmPassword": {
+              "type": "string"
+            }
+          }
+        },
+        "AuthenticationResponse": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          }
+        },
+        "RegisterRequest": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "surName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "departmentId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "roleName": {
+              "type": "string"
+            }
+          }
+        },
+        "ForgotPasswordRequest": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            }
+          }
+        },
+        "AuthenticationRequest": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          }
+        },
+        "ResendRequest": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            }
+          }
+        },
+        "ConfirmRequest": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          }
+        },
+        "GrantedAuthority": {
+          "type": "object",
+          "properties": {
+            "authority": {
+              "type": "string"
+            }
+          }
+        },
+        "User": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "role": {
+              "$ref": "#/components/schemas/Role"
+            },
+            "department": {
+              "$ref": "#/components/schemas/Department"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "surName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "deletedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "username": {
+              "type": "string"
+            },
+            "accountNonExpired": {
+              "type": "boolean"
+            },
+            "accountNonLocked": {
+              "type": "boolean"
+            },
+            "credentialsNonExpired": {
+              "type": "boolean"
+            },
+            "authorities": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GrantedAuthority"
+              }
+            }
+          }
+        },
+        "UserListResponseUserSimpleDto": {
+          "type": "object",
+          "properties": {
+            "users": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UserSimpleDto"
+              }
+            }
+          }
+        },
+        "UserListResponseUser": {
+          "type": "object",
+          "properties": {
+            "users": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "UserIdRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "UserDeletedResponse": {
+          "type": "object",
+          "properties": {
+            "user": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        },
+        "IdRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "name": "bearerAuth",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    }
+  }
